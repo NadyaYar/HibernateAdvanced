@@ -1,8 +1,13 @@
 package com.example.demo.entity;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Data
+@NoArgsConstructor
 public class ProductDescription {
 
     @Id
@@ -15,34 +20,8 @@ public class ProductDescription {
     @JoinColumn
     private Product product;
 
-    public ProductDescription() {
-    }
-
     public ProductDescription(String message) {
         this.message = message;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
 }
